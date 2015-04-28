@@ -7,15 +7,21 @@ class MovingSphere {
   // Vertical position of the sphere
   int y = 0;
 
+  // Control speed of horizontal movement
+  int xSpeed = 0;
+
 
   // Constructor – this is like setup() in a regular program
   // 
   // Parameters:
   //              y - horizontal position of the sphere
-  MovingSphere(int yPassed) {
+  MovingSphere(int yPassed, int xSpeedPassed) {
 
     // Assign the local, passed value for y to the global y
     y = yPassed;
+
+    // Assign the local, passed value for xSpeed to the global xSpeed
+    xSpeed = xSpeedPassed;
   }
 
   // This is like draw() in a regular program
@@ -23,12 +29,12 @@ class MovingSphere {
   // Returns the current centre point of the sphere
   int update() {
     
-    // Draw ellipse on screen vertically centred
+    // Draw ellipse on screen
     //      x    y    width    height
     ellipse(x, y, 50, 50);
 
     // Increase x position of ellipse
-    x = x + 1;
+    x = x + xSpeed;
     
     // Report where I am
     return x;

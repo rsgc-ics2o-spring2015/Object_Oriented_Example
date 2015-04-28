@@ -9,9 +9,9 @@ void setup() {
   size(500, 300);
   
   // Actually create the objects
-  topSphere = new MovingSphere(50);
-  middleSphere = new MovingSphere(150);
-  bottomSphere = new MovingSphere(250);
+  topSphere = new MovingSphere(50, 5);
+  middleSphere = new MovingSphere(150, 3);
+  bottomSphere = new MovingSphere(250, 1);
 }
 
 void draw() {
@@ -30,5 +30,6 @@ void draw() {
   if (bottomSphere.update() > width) {
     bottomSphere.updateX(0);
   }
+
   
 }
