@@ -20,8 +20,15 @@ void draw() {
   background(127);
   
   // Invoke the update() method on each object so that they are drawn on screen
-  topSphere.update();
-  middleSphere.update();
-  bottomSphere.update();
+  // When a sphere reaches the left edge, put it back at the right edge
+  if (topSphere.update() > width) {
+    topSphere.updateX(0);
+  }
+  if (middleSphere.update() > width) {
+    middleSphere.updateX(0);
+  }
+  if (bottomSphere.update() > width) {
+    bottomSphere.updateX(0);
+  }
   
 }

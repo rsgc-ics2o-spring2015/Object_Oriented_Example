@@ -19,7 +19,9 @@ class MovingSphere {
   }
 
   // This is like draw() in a regular program
-  void update() {
+  //
+  // Returns the current centre point of the sphere
+  int update() {
     
     // Draw ellipse on screen vertically centred
     //      x    y    width    height
@@ -27,5 +29,15 @@ class MovingSphere {
 
     // Increase x position of ellipse
     x = x + 1;
+    
+    // Report where I am
+    return x;
+  }
+  
+  // updateX
+  //
+  // Allow the horizontal position of the sphere to be set
+  void updateX(int xPassed) {
+    x = xPassed;  
   }
 }
