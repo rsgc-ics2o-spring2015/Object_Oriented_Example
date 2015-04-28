@@ -1,10 +1,17 @@
-// Global variables
-int x = 0;
+// Declare objects to create spheres
+MovingSphere topSphere;
+MovingSphere middleSphere;
+MovingSphere bottomSphere;
 
 void setup() {
   
   // Make canvas
   size(500, 300);
+  
+  // Actually create the objects
+  topSphere = new MovingSphere(50);
+  middleSphere = new MovingSphere(150);
+  bottomSphere = new MovingSphere(250);
 }
 
 void draw() {
@@ -12,11 +19,9 @@ void draw() {
   // Clear background (grey)
   background(127);
   
-  // Draw ellipse on screen vertically centred
-  //      x    y    width    height
-  ellipse(x, height/2, 50, 50);
-  
-  // Increase x position of ellipse
-  x = x + 1;
+  // Invoke the update() method on each object so that they are drawn on screen
+  topSphere.update();
+  middleSphere.update();
+  bottomSphere.update();
   
 }
